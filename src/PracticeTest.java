@@ -1,6 +1,7 @@
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
 
 import java.util.*;
 
@@ -34,14 +35,43 @@ public class PracticeTest {
     }
 
     @Test
-    void longestWordStartingWith() {
+    void testLongestWordStartingWith() {
         // Arrange
-        HashSet<String> set = new HashSet<>(Arrays.asList("Apple", "azure"));
+        HashSet<String> set = new HashSet<>(Arrays.asList("apple", "apricot", "banana", "azure"));
         // Act
         String actual = Practice.longestWordStartingWith(set, 'A');
         // Assert
+        assertEquals("apricot", actual);
     }
     
+    @Test
+    void testOddEvenDifference() {
+        // Arrange
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("A", 1);
+        map.put("B", 2);
+        map.put("C", 3);
+        map.put("D", 4);
+        map.put("E", 5);
+        // Act
+        int actual = Practice.oddEvenDifference(map);
+        // Assert
+        assertEquals(1, actual);
+    }
+
+    @Test
+    void testSecondLargestNumber() {
+        // Arrange
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(10, "A");
+        map.put(5, "B");
+        map.put(20, "C");
+        map.put(15, "D");
+        // Act
+        int actual = Practice.secondLargestNumber(map);
+        // Assert
+        assertEquals(15, actual);
+    }
 }
 
 
